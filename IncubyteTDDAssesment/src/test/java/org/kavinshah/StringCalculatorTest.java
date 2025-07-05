@@ -23,6 +23,17 @@ public class StringCalculatorTest {
         assertEquals(7,new StringCalculator().add("3,4"));
         assertEquals(6,new StringCalculator().add("3,3"));
     }
+    @Test
+    void SumOfLargeNumberSeparatedByComma()
+    {
+        StringBuffer testinput=new StringBuffer();
+        for(int i=1;i<=10000000;i++)
+        {
+            testinput.append("2,");
+        }
+
+        assertEquals(20000000L,new StringCalculator().add(testinput.toString()));
+    }
 
 
 }
