@@ -35,5 +35,11 @@ public class StringCalculatorTest {
         assertEquals(20000000L,new StringCalculator().add(testinput.toString()));
     }
 
+    @Test
+    void AllowNewLineAsDelimeterWithComma()
+    {
+        assertEquals(7,new StringCalculator().add("3\n,4"));
+    }
+
 
 }
