@@ -44,7 +44,7 @@ public class StringCalculatorTest {
     @Test
     void AllowCustomDelimeterDefinedInHeader()
     {
-        assertEquals(5,new StringCalculator().add("//;/\n3,2"));
+        assertEquals(5,new StringCalculator().add("//;\n3;2"));
     }
 
 
