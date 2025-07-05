@@ -4,6 +4,7 @@ package org.kavinshah;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 public class StringCalculatorTest {
     @Test
@@ -45,6 +46,14 @@ public class StringCalculatorTest {
     void AllowCustomDelimeterDefinedInHeader()
     {
         assertEquals(5,new StringCalculator().add("//;\n3;2"));
+    }
+
+    @Test
+    void shouldThrowExceptionOnNegativeNumbers() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            new StringCalculator().add("1,-2,3,-5");
+        });
+        assertEquals("Negatives not allowed: -2, -5", exception.getMessage());
     }
 
 
