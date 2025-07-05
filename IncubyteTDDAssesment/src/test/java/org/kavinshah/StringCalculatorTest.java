@@ -17,5 +17,12 @@ public class StringCalculatorTest {
         assertEquals(7,new StringCalculator().add("7"));
     }
 
+    @Test
+    void SumOfNumberSeparatedByComma()
+    {
+        assertEquals(7,new StringCalculator().add("3,4"));
+        assertEquals(6,new StringCalculator().add("3,3"));
+    }
+
 
 }
